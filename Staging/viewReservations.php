@@ -1,13 +1,13 @@
 <head>
-    <!-- Latest compiled and minified CSS -->
-<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+     <!--Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+ <!--jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+ <!--Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .addRow{
     background-color:#33cc33;
@@ -18,7 +18,7 @@
     font-size:20px;
 }
 td{
-    border:thin solid;
+    /*border:thin solid;*/
 }
 </style>
 </head>
@@ -49,7 +49,7 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM residence_areas";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    echo "<table>";
+    echo "<table class='table table-striped table-hover'>";
     echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Year</th><th>Gender</th><th>CWID</th><th>Hall</th><th>Email</th><th>TimeStamp</th>
     <th><span class='glyphicon glyphicon-trash'></span></th><th><span class='glyphicon glyphicon-edit'></span></th></tr>";
     while($row = $result->fetch_assoc()) {
@@ -61,8 +61,8 @@ if ($result->num_rows > 0) {
             <input type='hidden' name='rowName' value=".$row["id"].">
             <input type='hidden' name='rowFirstname' value=".$row["first_name"].">
             <input type='hidden' name='rowResidence' value=".$row["hall"].">
-            <input type='submit' value='delete'>
-            </form>
+             <input type='submit' value='delete'>
+             </form>
         </td>
         
         <td>
@@ -76,6 +76,7 @@ if ($result->num_rows > 0) {
             <input type='hidden' name='editYear' value=".$row["year"].">
             <input type='hidden' name='editEmail' value=".$row["email"].">
             <input type='submit' value='modify'>
+            </form>
             </td>
        </tr>";
     }

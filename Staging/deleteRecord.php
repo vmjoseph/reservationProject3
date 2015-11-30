@@ -4,23 +4,32 @@ $id=$_POST['rowName'];
 $firstName= $_POST['rowFirstname'];
 $residenceChoice=$_POST['rowResidence'];
 echo "You are deleting $firstName. Their user id was: ".$id;
-echo "<br> Residence Choice $residenceChoice";
+echo "<br> Residence Choice $residenceChoice <br>";
 
-// $sql = "DELETE FROM users WHERE id='$id'";
+$sql = "SELECT * FROM residence_halls";
+$result = $conn->query($sql);
 
-// if ($conn->query($sql) === TRUE) {
-//     echo "Record deleted successfully";
-// } else {
-//     echo "Error deleting record: " . $conn->error;
-// }
-// $sql = "UPDATE FROM users WHERE id='$id'";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $updatingResidence=$row[$residenceChoice];
+        $updatedResidence= $updatingResidence++;
+        echo $updatedResidence;
+} 
+}else {
+    echo "0 results";
+}
 
-// if ($conn->query($sql) === TRUE) {
-//     echo "Record deleted successfully";
-// } else {
-//     echo "Error deleting record: " . $conn->error;
-// }
+$sql2= "UPDATE $residenceChoice WHERE $residenceChoice='$updatedResidence'";
+$result= $conn->query($sql2);
 
-// $conn->close();
+if ($conn->query($sql2) === TRUE) {
+    echo "<br>Record updated successfully";
+} else {
+    echo "<br>Error updating record: " . $conn->error;
+}
+
+
+$conn->close();
 
 ?>

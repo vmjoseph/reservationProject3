@@ -6,3 +6,5 @@
 [27-Nov-2015 21:26:19 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/Staging/viewReservations.php on line 40
 [27-Nov-2015 21:27:05 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/Staging/viewReservations.php on line 40
 [28-Nov-2015 05:59:54 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/Staging/viewReservations.php on line 64
+[29-Nov-2015 04:08:34 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/ubuntu/workspace/Staging/deleteRecord.php on line 16
+[29-Nov-2015 04:08:50 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/ubuntu/workspace/Staging/deleteRecord.php on line 16

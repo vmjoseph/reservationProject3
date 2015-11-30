@@ -1,5 +1,15 @@
 <html>
+<head>
+        <!--Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+ <!--jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+ <!--Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
 	<form action="parse.php" method="POST">
 		<table>
@@ -63,20 +73,20 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
     echo "<table>";
-    echo "<tr><td>Champagnat: ".$row["champagnat"]."</tr></td>";
-    echo "<tr><td>Leo: ".$row["leo"]."</tr></td>";
-    echo "<tr><td>Marian: ".$row["marian"]."</tr></td>";
-    echo "<tr><td>Sheahan: ".$row["sheahan"]."</tr></td>";
-    echo "<tr><td>Midrise: ".$row["midrise"]."</tr></td>";
-    echo "<tr><td>Foy: ".$row["foy"]."</tr></td>";
-    echo "<tr><td>Gartland: ".$row["gartland"]."</tr></td>";
-    echo "<tr><td>Uppernew: ".$row["uppernew"]."</tr></td>";
-    echo "<tr><td>Lowernew: ".$row["lowernew"]."</tr></td>";
-    echo "<tr><td>New Fulton: ".$row["newfulton"]."</tr></td>";
-    echo "<tr><td>Lower West: ".$row["lowerwest"]."</tr></td>";
-    echo "<tr><td>Upper West: ".$row["upperwest"]."</tr></td>";
-    echo "<tr><td>Fulton: ".$row["fulton"]."</tr></td>";
-    echo "<tr><td>Talmadge: ".$row["talmadge"]."</tr></td>";
+    echo "<tr><td>Champagnat: </td><td>".$row["champagnat"]."</td></tr>";
+    echo "<tr><td>Leo:</td><td> ".$row["leo"]."</td></tr> ";
+    echo "<tr><td>Marian:</td><td> ".$row["marian"]."</tr> ";
+    echo "<tr><td>Sheahan:</td><td> ".$row["sheahan"]."</td></tr> ";
+    echo "<tr><td>Midrise: </td><td>".$row["midrise"]."</td></tr> ";
+    echo "<tr><td>Foy:</td><td> ".$row["foy"]."</td></tr> ";
+    echo "<tr><td>Gartland: </td><td>".$row["gartland"]."</td></tr> ";
+    echo "<tr><td>Uppernew:</td><td> ".$row["uppernew"]."</td></tr> ";
+    echo "<tr><td>Lowernew:</td><td> ".$row["lowernew"]."</td></tr> ";
+    echo "<tr><td>New Fulton:</td><td> ".$row["newfulton"]."</td></tr> ";
+    echo "<tr><td>Lower West:</td><td> ".$row["lowerwest"]."</td></tr> ";
+    echo "<tr><td>Upper West:</td><td> ".$row["upperwest"]."</td></tr> ";
+    echo "<tr><td>Fulton:</td><td> ".$row["fulton"]."</td></tr> ";
+    echo "<tr><td>Talmadge:</td><td> ".$row["talmadge"]."</td></tr>";
     echo "</table>";
     $champLeft=$row["champagnat"];
     $leoLeft=$row["leo"];

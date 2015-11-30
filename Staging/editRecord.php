@@ -30,7 +30,7 @@ echo "
 		<option value='marian'>Marian Hall</option>
 		<option value='sheahan'>Sheahan Hall</option>
 		<option value='midrise'>Midrise Hall</option>
-		<option value='foy'>Foy Townhouses</option>
+		<option value='foy' selected >Foy Townhouses</option>
 		<option value='gartland'>Gartland Commons</option>
 		<option value='uppernew'>Upper New Townhouses</option>
 		<option value='lowernew'>Lower New Townhouses</option>

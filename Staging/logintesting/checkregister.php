@@ -42,5 +42,5 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-header("reservationindex.html");
+// header("reservationindex.html");
 ?>
