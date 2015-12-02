@@ -10,12 +10,23 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<script>
+    function autoEmail(){
+        var firstname= document.getElementById("firstname").value;
+        var lastname= document.getElementById("lastname").value;
+        var emailPre=document.getElementById("email");
+        // emailPre=firstname+"."+lastname+"1@marist.edu";
+        emailPre.value=firstname+"."+lastname+"1@marist.edu";
+    }
+</script>
 <body>
-	<form action="parse.php" method="POST">
+    <!--<div class="row">-->
+    <!--    <div class="col-sm-6">-->
+	<form class="form"action="parse.php" method="POST">
 		<table>
 			<tr><th colspan="2"> General Information: </th></tr>
-			<tr><td> First Name: </td><td><input type="text" required="required" name="firstname"></td></tr>
-			<tr><td> Last Name: </td><td><input type="text" required="required" name="lastname"></td></tr>
+			<tr><td> First Name: </td><td><input type="text" id="firstname" required="required" name="firstname"></td></tr>
+			<tr><td> Last Name: </td><td><input type="text" id="lastname" required="required" name="lastname"></td></tr>
 			<tr><td> CWID: </td><td><input type="number" required="required" name="cwid"></td></tr>
 			<tr><td> Year </td><td>
 							<select name= "year" required="required">
@@ -33,7 +44,7 @@
 					<option value="male">Male</option>
 					</select>
 				</td></tr>
-			<tr><td>Email:</td><td><input type="email" required="required" name="email"></td></tr>
+			<tr><td>Email:</td><td><input onfocus="autoEmail()" type="email" id="email" required="required" name="email"></td></tr>
 			<tr><th colspan="2">Preferences:</th></tr>
 			<tr><td> Laundry?: </td><td><input type="checkbox" name="laundry"></td></tr>
 			<tr><td> Special Services?: </td><td><input type="checkbox" name="sservices"></td></tr>
@@ -59,6 +70,9 @@
 																<option value="offcampus">Off Campus</option>
 															</td></tr>
 			<tr><th colspan="2"><input type="submit" value="Submit"></th></tr>
+			<!--</div>-->
+			<!--<div class="col-sm-3"></div>-->
+			<!--</div>-->
 </body>
 </html>
 
@@ -119,7 +133,8 @@ if ($result->num_rows > 0) {
     <input type='hidden' name='upperwest' value=$upperwLeft>
     <input type='hidden' name='fulton' value=$fultonLeft>
     <input type='hidden' name='talmadge' value=$talmadgeLeft>
-    </table>";
+    </table>
+    </div>";
     }
 } else {
     echo "0 results";

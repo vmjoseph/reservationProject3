@@ -11,7 +11,7 @@ $email=$_POST['editEmail'];
 echo "You are editing $firstName. Edit their informaiton below: ";
 echo "<br> The residence was: $residence <br>";
 echo"<script>
-        document.getElementById('residenceSelect').value='$residence';
+        // document.getElementById('residenceSelect').value='$residence';
     </script>";
 echo "
 <form action='updateTables.php' method='POST'>
@@ -30,7 +30,7 @@ echo "
 		<option value='marian'>Marian Hall</option>
 		<option value='sheahan'>Sheahan Hall</option>
 		<option value='midrise'>Midrise Hall</option>
-		<option value='foy' selected >Foy Townhouses</option>
+		<option value='foy'>Foy Townhouses</option>
 		<option value='gartland'>Gartland Commons</option>
 		<option value='uppernew'>Upper New Townhouses</option>
 		<option value='lowernew'>Lower New Townhouses</option>
@@ -55,5 +55,47 @@ echo "
 // }
 
 // $conn->close();
+//Loop to generate row names
+// $query = mysql_query("SELECT * FROM mytable");
+
+// while ($row = mysql_fetch_assoc($query)) {
+//     foreach($row as $key => $value) {
+//         print "$key = $value <br />";
+//      }
+// }
+echo "<br><br>";
+
+$sql = "SELECT * FROM residence_areas";
+$result = mysql_query($sql) or die(mysql_error());
+
+// Print the column names as the headers of a table
+echo "<table><tr>";
+for($i = 0; $i < mysql_num_fields($result); $i++) {
+    $field_info = mysql_fetch_field($result, $i);
+    echo "<th>{$field_info->name}</th>";
+}
+
+// Print the data
+while($row = mysql_fetch_row($result)) {
+    echo "<tr>";
+    foreach($row as $_column) {
+        echo "<td>{$_column}</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+// if ($result->num_rows > 0) {
+//     // output data of each row
+//     while ($row = mysql_fetch_assoc($sql)) {
+//     foreach($row as $key => $value) {
+//         print "$key = $value <br />";
+//      }
+// }
+// } else {
+//     echo "0 results";
+// }
+
 
 ?>
