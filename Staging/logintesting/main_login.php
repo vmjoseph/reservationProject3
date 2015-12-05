@@ -36,13 +36,5 @@
 
 </html>
 
-<?php
 
-$url=https://project-3-lizsan708.c9users.io/Staging/logintesting/register.php;
 
-function redirect($url, $statusCode = 303)
-{
-   header('Location: ' . $url, true, $statusCode);
-   die();
-}
-?>

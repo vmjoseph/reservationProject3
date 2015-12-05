@@ -34,7 +34,7 @@ if ($conn->connect_error) {
 ?>
 <html>
     <div class="panel panel-default">
-  <div class="panel-heading">Admin Control Panel</div>
+  <div class="panel-heading">User Control Panel</div>
 </div>
 <!--<script>-->
 <!--function submitForm() {-->
@@ -78,8 +78,7 @@ if ($result->num_rows > 0) {
        </tr>";
     }
 } else {
-    echo "<table class='table table-striped table-hover'>
-            <tr><td>Sorry, there are currently no records in this database</td><td> Would you like to add a record?</td></tr>";
+    echo "0 results";
 }
 echo "<tr><td class='addRow'><span class='add'>+</span>Add a row</td></tr>";
 echo "</table>";

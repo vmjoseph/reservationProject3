@@ -15,6 +15,8 @@
                     <input type="text" name="firstname"></td> </tr>
                 <td> Last Name</td><td> 
                     <input type="text" name="lastname"></td> </tr>
+                <tr><td>CWID</td><td>
+                    <input type="text" name="cwid"></td></tr>
                 <tr> <td>Email</td><td> <input type="text" name="email"></td> </tr> 
                 <tr> <td>UserName</td><td> 
                     <input type="text" name="username"></td> </tr> 

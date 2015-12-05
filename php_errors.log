@@ -121,3 +121,43 @@
 [01-Dec-2015 00:17:00 UTC] PHP Stack trace:
 [01-Dec-2015 00:17:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
 [01-Dec-2015 00:17:00 UTC] PHP   2. mysql_query(*uninitialized*) /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:33 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:33 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:33 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:33 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:33 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:33 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:40 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:40 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:40 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:40 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:40 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:40 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:55 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:55 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:55 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:55:55 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 03:55:55 UTC] PHP Stack trace:
+[05-Dec-2015 03:55:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:55:55 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 03:56:36 UTC] PHP Warning:  mysql_num_fields() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/Staging/editRecord.php on line 73
+[05-Dec-2015 03:56:36 UTC] PHP Stack trace:
+[05-Dec-2015 03:56:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:56:36 UTC] PHP   2. mysql_num_fields() /home/ubuntu/workspace/Staging/editRecord.php:73
+[05-Dec-2015 03:56:36 UTC] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/Staging/editRecord.php on line 79
+[05-Dec-2015 03:56:36 UTC] PHP Stack trace:
+[05-Dec-2015 03:56:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 03:56:36 UTC] PHP   2. mysql_fetch_row() /home/ubuntu/workspace/Staging/editRecord.php:79
+[05-Dec-2015 04:01:05 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 04:01:05 UTC] PHP Stack trace:
+[05-Dec-2015 04:01:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 04:01:05 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
+[05-Dec-2015 04:01:05 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/Staging/editRecord.php on line 69
+[05-Dec-2015 04:01:05 UTC] PHP Stack trace:
+[05-Dec-2015 04:01:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/Staging/editRecord.php:0
+[05-Dec-2015 04:01:05 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/Staging/editRecord.php:69
