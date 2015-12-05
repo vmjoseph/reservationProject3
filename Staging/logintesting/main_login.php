@@ -1,3 +1,4 @@
+
 <html>
     
 <body>
@@ -18,7 +19,7 @@
         <tr>
             <td>Password</td>
             <td>:</td>
-            <td><input name="mypassword" type="text" id="mypassword"></td>
+            <td><input type="password" name="mypassword" id="mypassword"></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -34,3 +35,14 @@
 </body>
 
 </html>
+
+<?php
+
+$url=https://project-3-lizsan708.c9users.io/Staging/logintesting/register.php;
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+?>

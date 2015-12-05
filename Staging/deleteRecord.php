@@ -13,21 +13,29 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $updatingResidence=$row[$residenceChoice];
-        $updatedResidence= $updatingResidence++;
-        echo "<br> $updatingResidence";
+        $updatedResidence= $updatingResidence+1;
+        echo "<br> $updatingResidence<br>";
         echo $updatedResidence;
 } 
 }else {
     echo "0 results";
 }
 
-$sql2= "UPDATE $residenceChoice WHERE $residenceChoice='$updatedResidence'";
-$result= $conn->query($sql2);
+$sql2= "UPDATE residence_halls SET $residenceChoice='$updatedResidence' WHERE $residenceChoice= $updatingResidence ";
+$result2= $conn->query($sql2);
 
 if ($conn->query($sql2) === TRUE) {
-    echo "<br>Record updated successfully";
+    echo "<br>Record updated successfully <br>";
 } else {
     echo "<br>Error updating record: " . $conn->error;
+}
+
+$sql3 = "DELETE FROM residence_areas WHERE id = $id";
+
+if ($conn->query($sql3) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
 }
 
 
