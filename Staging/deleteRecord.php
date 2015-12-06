@@ -3,9 +3,6 @@ include_once("connect.php");
 $id=$_POST['rowName'];
 $firstName= $_POST['rowFirstname'];
 $residenceChoice=$_POST['rowResidence'];
-echo "You are deleting $firstName. Their user id was: ".$id;
-echo "<br> Residence Choice $residenceChoice <br>";
-
 $sql = "SELECT * FROM residence_halls";
 $result = $conn->query($sql);
 
@@ -14,8 +11,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $updatingResidence=$row[$residenceChoice];
         if ($updatingResidence>=5){
-            echo "Sorry there has been in error: database error $residenceChoice has too many spots left. Please contact your system administrator.<br>
-            < a href='mailto:somone@google.com'> This guy </a>";
+            echo "<div class='alert alert-danger'>
+  <strong><span class='glyphicon glyphicon-warning-sign'></span> Sorry there has been in error: </strong> Database error $residenceChoice has too many spots left. Please <a href='mailto:help@example.com'>contact</a> your system administrator.
+</div>";
         }else{
             $updatedResidence= $updatingResidence+1;
             echo "<br> $updatingResidence<br>";
@@ -24,7 +22,9 @@ if ($result->num_rows > 0) {
             $result2= $conn->query($sql2);
             
             if ($conn->query($sql2) === TRUE) {
-            echo "<br>Record updated successfully <br>";
+            echo "<br> <div class='alert alert-success'>
+  <strong>Success!</strong> Record has been deleted.
+</div><br>";
             } else {
             echo "<br>Error updating record: " . $conn->error;
             }
@@ -42,6 +42,15 @@ if ($result->num_rows > 0) {
 }else {
     echo "0 results";
 }
+
+echo "<div class='panel panel-warning'>
+      <div class='panel-heading'>You are deleting $firstName </div>
+      <div class='panel-body'>Their user id was: $id";
+echo "<br> Residence Choice <span class='label label-info'>$residenceChoice</span><br>
+</div>
+</div>";
+
+
 
 
 

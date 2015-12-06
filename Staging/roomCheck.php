@@ -1,3 +1,14 @@
+<head>
+     <!--Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+ <!--jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+ <!--Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <?php
 $firstname = ucfirst(trim($_POST["firstname"]));
 $lastname= ucfirst(trim($_POST["lastname"]));
@@ -25,11 +36,11 @@ if ($subtractRoom==-1){
     Please return and choose a new room <a href='index.php'>Return</a>";
 }else{
 	#displays number of remaining rooms for the chosen residence hall
-echo "Rooms remaining in $residence is $roomsRemaining <br>";
+echo "Rooms remaining in <span class='label label-info'>$residence</span> is <span class='label label-default'>$roomsRemaining </span><br>";
 	   // echo "<script>alert('Your submission has a few errors, please return to the form');</script>";
 	    
- echo "Are you sure you want to reserve a room in $residence?<br> 
-There will be $subtractRoom rooms left after you submit.<br>";
+ echo "Are you sure you want to reserve a room in <span class='label label-info'>$residence</span>?<br> 
+There will be <span class='label label-default'>$subtractRoom </span>rooms left after you submit.<br>";
 	   // echo "<script>alert('Your submission has a few errors, please return to the form');</script>";
 	    echo "<button onclick='window.history.back()';>Go Back</button>";
 	    echo "<form action='submit.php' method='post'>

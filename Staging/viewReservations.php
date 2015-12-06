@@ -1,3 +1,6 @@
+<?php
+include_once('connect.php');
+?>
 <head>
      <!--Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -34,7 +37,7 @@ if ($conn->connect_error) {
 ?>
 <html>
     <div class="panel panel-default">
-  <div class="panel-heading">Admin Control Panel</div>
+  <div class="panel-heading">User Control Panel</div>
 </div>
 <!--<script>-->
 <!--function submitForm() {-->
@@ -43,12 +46,12 @@ if ($conn->connect_error) {
 <!--</script>-->
 </html>
 <?php
-$sql = "SELECT * FROM residence_areas";
+$sql = "SELECT * FROM residence_areas WHERE cwid=$loggedCWID ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table class='table table-striped table-hover'>";
     echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Year</th><th>Gender</th><th>CWID</th><th>Hall</th><th>Email</th><th>TimeStamp</th>
-    <th><span class='glyphicon glyphicon-trash'></span></th><th><span class='glyphicon glyphicon-edit'></span></th></tr>";
+    <th>Delete</span></th><th>Modify</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>".$row["id"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]. "</td><td>".$row["year"]."</td><td>".$row["gender"]."</td><td>".
         $row["cwid"]."</td><td>".$row["hall"]."</td><td>".$row["email"]."</td><td>".$row["timestamp"]."</td>
@@ -58,7 +61,7 @@ if ($result->num_rows > 0) {
             <input type='hidden' name='rowName' value=".$row["id"].">
             <input type='hidden' name='rowFirstname' value=".$row["first_name"].">
             <input type='hidden' name='rowResidence' value=".$row["hall"].">
-             <input type='submit' value='delete'>
+              <button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></button>
              </form>
         </td>
         
@@ -72,7 +75,7 @@ if ($result->num_rows > 0) {
             <input type='hidden' name='editCWID' value=".$row["cwid"].">
             <input type='hidden' name='editYear' value=".$row["year"].">
             <input type='hidden' name='editEmail' value=".$row["email"].">
-            <input type='submit' value='modify'>
+             <button type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button>
             </form>
             </td>
        </tr>";
@@ -81,7 +84,7 @@ if ($result->num_rows > 0) {
     echo "<table class='table table-striped table-hover'>
             <tr><td>Sorry, there are currently no records in this database</td><td> Would you like to add a record?</td></tr>";
 }
-echo "<tr><td class='addRow'><span class='add'>+</span>Add a row</td></tr>";
+echo "<tr><td colspan='11'><button type='button' onclick='window.location='index2.php''class='btn btn-success btn-block'><span class='glyphicon glyphicon-plus'></span> &nbsp; Add A Reservation</button></td></tr>";
 echo "</table>";
 
 $conn->close();

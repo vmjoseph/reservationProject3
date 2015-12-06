@@ -28,14 +28,18 @@ if (!$conn) {
 
 $firstname= ucfirst(trim($_POST["firstname"]));
 $lastname= ucfirst(trim($_POST["lastname"]));
+$year= $_POST["year"];
+$gender= $_POST["gender"];
+$cwid= trim($_POST["cwid"]);
 $email= $_POST["email"];
 $username= $_POST["username"];
 $password= $_POST["password"];
-//permissions??
+
+
 
 #logs user input into the members table        
-$sql =  "INSERT INTO members (first_name, last_name, email, username, password)
- VALUES ('$firstname', '$lastname', '$email', '$username', '$password')";
+$sql =  "INSERT INTO members (first_name, last_name, year, gender, cwid, email, username, password)
+ VALUES ('$firstname', '$lastname','$year', '$gender', '$cwid', '$email', '$username', '$password')";
  
 if (mysqli_query($conn, $sql)) {
     echo "<br> New Registration Created Successfully<br>";

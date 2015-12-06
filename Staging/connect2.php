@@ -1,4 +1,3 @@
-
 <html>
     <head>
      <!--Latest compiled and minified CSS -->
@@ -38,7 +37,7 @@ if (!$conn) {
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index2.php"><span class='glyphicon glyphicon-home'></span> FoxTrot Reservation System  </a>
+      <a class="navbar-brand" href="index3.php"><span class='glyphicon glyphicon-home'></span> FoxTrot Reservation System  </a>
     </div>
     <div>
       <!--<ul class="nav navbar-nav">-->

@@ -1,7 +1,9 @@
 <?php
-require_once("connect.php");
+require_once("connect2.php");
 ?>
+
 <html>
+    <!--admin reservation page; allows full modificaion of all values -->
 <head>
         <!--Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -27,13 +29,13 @@ require_once("connect.php");
 	<form class="form" action="parse.php" method="POST">
 		<table>
 			<tr><th colspan="2"> General Information: </th></tr>
-			<tr><td> First Name: </td><td><input type="text" readonly class="form-control" id="firstname" required="required" value="<?php echo $loggedUserfName; ?>"name="firstname"></td></tr>
-			<tr><td> Last Name: </td><td><input type="text"readonly class="form-control" id="lastname" required="required" value="<?php echo $loggedUserlName;?>" name="lastname"></td></tr>
-			<tr><td> CWID: </td><td><input type="number" readonly class="form-control" required="required" value="<?php echo $loggedCWID;?>" name="cwid"></td></tr>
+			<tr><td> First Name: </td><td><input type="text" id="firstname" required="required" value="<?php echo $loggedUserfName; ?>"name="firstname"></td></tr>
+			<tr><td> Last Name: </td><td><input type="text" id="lastname" required="required" value="<?php echo $loggedUserlName;?>" name="lastname"></td></tr>
+			<tr><td> CWID: </td><td><input type="number" required="required" value="<?php echo $loggedCWID;?>" name="cwid"></td></tr>
 			<tr><td> Year </td><td>
-							<input name= "year" readonly class="form-control" type="text" value="<?php echo $loggedYear; ?>"></td></tr>
-			<tr><td>Gender</td><td><input readonly type="text" value="<?php echo $loggedGender;?>" required="required" class="form-control" name="gender" id="gender"></td></tr>
-			<tr><td>Email:</td><td><input class="form-control" readonly value="<?php echo $loggedEmail;?>" type="email" id="email" required="required" name="email"></td></tr>
+							<input name= "year" type="text" value="<?php echo $loggedYear; ?>"></td></tr>
+			<tr><td>Gender</td><td><input value="<?php echo $loggedGender;?>" required="required" class="form-control" name="gender" id="gender"></td></tr>
+			<tr><td>Email:</td><td><input class="form-control" type="email" id="email" required="required" name="email"></td></tr>
 			<tr><th colspan="2">Preferences:</th></tr>
 			<tr><td> Laundry?: </td><td><input type="checkbox" class="form-control" name="laundry"></td></tr>
 			<tr><td> Special Services?: </td><td><input class="form-control" type="checkbox" name="sservices"></td></tr>

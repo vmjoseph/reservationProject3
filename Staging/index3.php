@@ -1,24 +1,32 @@
 <?php
-include_once('connect.php');
+include_once('connect2.php');
+
+if($_SESSION["permissions"] == "user"){
+    echo "<script>
+            alert('You are not authorized to view this page.');
+            </script>";
+           
+header("location:https://project-3-lizsan708.c9users.io/Staging/index2.php");
+}
 ?>
 <html>
 <script>
     $(document).ready(function(){
        $("#create").click(function(){
-           window.location.replace("index.php");
+           window.location.replace("admin_index.php");
        });
        $("#viewReservations").click(function(){
-           window.location.replace("viewReservations.php");
+           window.location.replace("viewReservations.1.php");
        });
        $("#deleteReservation").click(function(){
-           window.location.replace("viewReservations.php");
+           window.location.replace("viewReservations.1.php");
        });
     });
 </script>
 <body>
 <div class='row'>
     <div class='col-sm-4'> </div>
-    <div class='col-sm-4 jumbotron'><center><h1>Welcome!</h1><h3><small>Please select one of the following options:</small></h3></center></div>
+    <div class='col-sm-4 jumbotron'><center><h1>Welcome Admin</h1><h3><small>Please select one of the following options:</small></h3></center></div>
     <div class='col-sm-4'></div>
 </div>
 
@@ -33,6 +41,7 @@ include_once('connect.php');
     </div>
 <div class='col-sm-3'> </div>
 </div>
+
 
 </body>
 </html>

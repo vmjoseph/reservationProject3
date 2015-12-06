@@ -15,7 +15,7 @@ mysqli_select_db($con, $tbl_name);
 $myusername=$_POST['myusername']; 
 $mypassword=$_POST['mypassword']; 
 
-// To protect MySQL injection (more detail about MySQL injection)
+// To protect from MySQL injection
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
 $myusername = $con->real_escape_string($myusername);
@@ -34,10 +34,11 @@ if($count==1){
 $_SESSION["myusername"] = $username;
 $_SESSION["mypassword"] = $pass;
 //header("location:login_success.php");
-header("location:https://project-3-lizsan708.c9users.io/Staging/index.php");
+header("location:https://project-3-lizsan708.c9users.io/Staging/index2.php");
 }
 else {
 echo "Wrong Username or Password";
+
 }
 }
 ?>

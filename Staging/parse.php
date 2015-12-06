@@ -1,10 +1,16 @@
-<head>
-	<style>
+
+
+<body>
 	
-	</style>
-</head>
+<!--<div class="jumbotron">-->
+<!--  <h1>Confirmation Page</h1>      -->
+  <!--<p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>-->
+<!--</div>-->
+
 <?php
 require_once("connect.php");
+
+      
 #declaring vars from previous index.html page
 $firstname = ucfirst(trim($_POST["firstname"]));
 $lastname= ucfirst(trim($_POST["lastname"]));
@@ -28,6 +34,16 @@ $gender=$_POST["gender"];
 #echo $kitchen."<br>";
 
 #checks if a residence hall was selected
+// if ($errorCounter===0){
+// 	echo "<div class='panel panel-success'>
+//       <div class='panel-heading'>So far so good! Let's confirm a few things: </div>
+//       <div class='panel-body'>";
+	
+// }else{
+// 	echo "<div class='panel panel-danger'>
+//       <div class='panel-heading'>Oops! You may need to fix a few items before continuing. </div>
+//       <div class='panel-body'>";
+// }
 	if ($residence== ""){
 		echo "You did not select a residence hall!!<br>";
 		$errorCounter++;
@@ -36,7 +52,9 @@ $gender=$_POST["gender"];
     if($year=="freshman"){
         #searches user-selected year's array for residence hall, if the hall is found in another group's array, returns error
         if(in_array($residence,$sophomore) || in_array($residence, $seniorJunior)){
-            echo "Sorry, you are a $year, so you cannot choose $residence.<br>";
+           echo "<div class='alert alert-danger'>
+  <strong>Uh Oh!</strong>Sorry, you are a $year, so you cannot chose $residence. <br>
+</div>";
             $errorCounter++;
             }else {
             #checks to see if user wants a kitchen, if so and they have chosen Marian, the user will receieve an error
@@ -53,12 +71,14 @@ $gender=$_POST["gender"];
 	
 	if ($year == "sophomore"){
 		if(in_array($residence,$freshman) || in_array($residence, $seniorJunior)){
-			echo "Sorry, you are a $year, so you cannot chose $residence. <br>";
+			echo "<div class='alert alert-danger'>
+  <strong>Uh Oh!</strong>Sorry, you are a $year, so you cannot chose $residence. <br>
+</div>";
 			$errorCounter++;
 		}else {
 			if($kitchen== TRUE && $residence=="midrise" ){
 				#checks to see if user wants a kitchen, if so and they have chosen Midrise, the user will receieve an error
-				echo "Sorry, $residence does not have the amenities you requested. Please try another residence hall. <br>";
+				echo "<b>Sorry, $residence does not have the amenities you requested. Please try another residence hall.</b><br>";
 				$errorCounter++;
 			
 		} else{
@@ -68,7 +88,9 @@ $gender=$_POST["gender"];
 	}
 	if ($year == "senior" || $year == "junior"){
 		if(in_array($residence,$freshman) || in_array($residence, $sophomore)){
-			echo "Sorry, you are a $year, so you cannot chose $residence. <br>";
+		echo "<div class='alert alert-danger'>
+  <strong>Uh Oh!</strong>Sorry, you are a $year, so you cannot chose $residence. <br>
+</div>";
 			$errorCounter++;
 		}else {
 			#echo "Congrats, you are a $year, so you can choose $residence. <br>";
@@ -76,7 +98,9 @@ $gender=$_POST["gender"];
 	}
 
 	}	
-	echo "Your residence choice was $residence<br>";
+	echo "<div class='panel panel-default'>
+  <div class='panel-body'>";
+	echo "Your residence choice was <span class='label label-info'>$residence</span><br>";
 	
 	#does not record off-campus choices on the residence hall table
 	if ($residence == "offcampus"){
@@ -129,7 +153,7 @@ $gender=$_POST["gender"];
 		echo "You did not input your year!!<br>";
 		$errorCounter++;
 	}else{
-		echo "Your year is ". $year.".<br>";
+		echo "Your year is <span class='label label-info'>". $year.".</span><br>";
 	}
 	if($email==""){
 	    echo "You did not input your email!<br>";
@@ -181,9 +205,9 @@ if ($result->num_rows > 0) {
 }
 
 		#pass on the variables to different pages
-	    echo "Your gender is $gender<br>";
+	    echo "Your gender is <span class='label label-info'>$gender</span><br>";
 	    echo "Please verify the information above. If there is an error, please go back.<br>";
-	    echo "<button onclick='window.history.back();'>Go Back</button>
+	    echo "<button type='button' class='btn btn-primary' onclick='window.history.back();'>Go Back<br><span class='glyphicon glyphicon-menu-left'></span></button>
 	    <form action='roomCheck.php' method='post'>
 	    <input type='hidden' name='firstname' value=$firstname></input>
 	    <input type='hidden' name='lastname' value=$lastname></input>
@@ -203,6 +227,8 @@ if ($result->num_rows > 0) {
 		
 	}
 	
-
+echo "</div> </div>
+</div>
+</div>";
 
 ?>

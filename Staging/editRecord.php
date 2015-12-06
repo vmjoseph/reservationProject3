@@ -9,6 +9,7 @@ $gender=$_POST['editGender'];
 $cwid=$_POST['editCWID'];
 $email=$_POST['editEmail'];
 
+
 echo "You are editing $firstName. Edit their informaiton below: ";
 echo "<br> The residence was: $residence <br>";
 
@@ -22,7 +23,7 @@ echo "
 <td>Gender:</td><td><input name='editGender' type='text' value='$gender'></td>
 <td>CWID: </td><td><input name='editCWID'type='numbers' value='$cwid'></td>
 <td>Residence Hall:</td><td>
-	<select id='residence' name='residence' >
+	<select id='residence' name='residenceNew' >
 		<option value=''>Select a residence</option>
 		<option value='champagnat'>Champagnat Hall</option>
 		<option value='leo'>Leo Hall</option>
@@ -50,6 +51,7 @@ var selectOptionRes=document.getElementById('residence').value ='$residence';
 
 </script>";
 
+// if($hall)
 
 
 echo "<br><br>";
